@@ -82,15 +82,18 @@ public:
 
 
     bool addat(int index, T dataValue) {
+        if (index > size) return false;
+
         if (index == 0) {
             addfirst(dataValue); return true;
         }
 
-        if (index == size - 1) {
-            addlast(dataValue); return true;
+        if (index == size) {
+            //insertat(tail->prev, dataValue); 
+            addlast(dataValue);
+            return true;
         }
 
-        if (index > size) return false;
         int pos = 0;
         auto p = head;
         while (pos < index) { p = p->next; pos++; }
@@ -217,7 +220,10 @@ int main()
     //lst1.remove(10);
     //lst1.showList();
 
-    lst1.addat(2, 77);
+    //Testing addat - change the value of pos
+    int pos =4;
+    bool addFlag = lst1.addat(pos, 777);
+    cout << endl << "add 777 at pos: " << pos << ", addFlag: " << addFlag << endl;
     lst1.showList();
 
     cout << "\nAll done!\n";
