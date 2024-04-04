@@ -32,9 +32,10 @@ int main()
     //lst1.showList();
 
     //Testing addAt - change the value of pos
-    int pos = 0;
+    int pos = 2;
     bool addFlag = lst1.addAt(pos, 7777);
-    cout << endl << "add 7777 at pos: " << pos << ", addFlag: " << addFlag << endl;
+    cout << endl << "add 7777 at pos: " << pos 
+         << ", (addFlag) Value added? " << (addFlag ? "True" : "False") << endl;
     lst1.showList();
 
     cout << "\nAll done!\n";
